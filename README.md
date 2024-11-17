@@ -1,4 +1,4 @@
-#Açıklama
+# Açıklama
 Proje günlük yemek listesi oluşturmak ve menüyü kullanıcılar ile paylaşmayı amaçlamaktadır.
 Asp.Net Core üzerinde hazırlanmıştır.
 Kullanıcılar Anasayfa üzerinde oluşturma tarihleriyle birlikte menüleri görmektedirler. Menü içeriğini görüntülemek için her menü yanında View butonu bulunur.
