@@ -1,0 +1,32 @@
+﻿@model RegisterVM
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<form asp-controller="Account" method="post">
+    <div asp-validation-summary="All"></div>
+    <table>
+        <tr>
+            <th>E-Mail</th>
+            <td><input type="email" asp-for="Email" /></td>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <td><input type="text" asp-for="UserName" /></td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td><input type="password" asp-for="Password" /></td>
+        </tr>
+        <tr>
+            <th>ConfirmPassword</th>
+            <td><input type="password" asp-for="ConfirmPassword" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Register" /></td>
+        </tr>
+
+    </table>
+</form>

@@ -1,0 +1,25 @@
+﻿@model List<Menu>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<table>
+    <tr>
+        <th>Menu</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Process</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.Date</td>
+            <td>
+                <a class="btn btn-outline-dark mt-auto" asp-controller="Home" asp-action="Menu" asp-route-id="@item.ID">View</a>
+                <a class="btn btn-warning mt-auto" asp-controller="Home" asp-action="MenuUpdate" asp-route-id="@item.ID">Update</a>
+            </td>
+        </tr>
+    }
+</table>

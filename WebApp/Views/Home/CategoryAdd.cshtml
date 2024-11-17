@@ -1,0 +1,54 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "CategoryAdd";
+}
+
+<h1>CategoryAdd</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Categories</h4>
+                </div>
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Process</th>
+                        </tr>
+                        @foreach (var item in @ViewData["Category"] as List<Category>)
+                        {
+                            <tr>
+                                <td>@item.ID</td>
+                                <td>@item.Name</td>
+                                <td><a class="btn btn-danger mt-auto" asp-controller="Home" asp-action="CategoryDelete" asp-route-id="@item.ID">Delete</a></td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Category Add</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Home" method="post">
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <td><input type="text" asp-for="Name" required/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="submit" value="Add" /></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
